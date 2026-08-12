@@ -1,7 +1,7 @@
 FROM python:3.13
 
 ARG BUILD_VERSION=latest
-LABEL io.hass.version="$BUILD_VERSION" io.hass.type="addon" io.hass.arch="armhf|armv7|aarch64|amd64|i386"
+LABEL io.hass.version="$BUILD_VERSION" io.hass.type="addon" io.hass.arch="aarch64|amd64"
 
 COPY . /app
 WORKDIR /app
