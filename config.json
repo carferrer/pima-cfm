@@ -1,0 +1,57 @@
+name: "PIMA Alarms"
+version: "latest"
+slug: "pima"
+description: "Interface for negotiation with PIMA Hunter Pro alarms."
+url: "https://github.com/carferrer/pima-cfm"
+image: "carferrermar/pima2mqtt"
+arch:
+  - amd64
+startup: application
+boot: auto
+map:
+  - "config:ro"
+  - "ssl:ro"
+discovery:
+  - mqtt
+services:
+  - mqtt:want
+auto_uart: true
+uart: true
+environment:
+  OPTIONS_FILE: "/data/options.json"
+ports:
+  7777/tcp: 7777
+options:
+  log_level: "INFO"
+  login: null
+  zones: ""
+  mqtt_discovery_max_zone: null
+  mqtt_host: ""
+  mqtt_port: 1883
+  mqtt_topic: ""
+  mqtt_user: null
+  mqtt_pass: null
+  mqtt_client_id: ""
+  ssl_cert: ""
+  ssl_key: ""
+  serialport: ""
+  key: null
+  port: 7777
+schema:
+  log_level: "list(CRITICAL|ERROR|WARNING|INFO|DEBUG)?"
+  login: "match([0-9]{4,6})"
+  zones: "list(32|96|144)?"
+  mqtt_discovery_max_zone: "int(0,144)"
+  mqtt_host: "str?"
+  mqtt_port: "port?"
+  mqtt_topic: "str?"
+  mqtt_user: "str?"
+  mqtt_pass: "str?"
+  mqtt_client_id: "str?"
+  ssl_cert: "str?"
+  ssl_key: "str?"
+  serialport: "str?"
+  pima_host: "str?"
+  pima_port: "port?"
+  key: "str"
+  port: "port"
