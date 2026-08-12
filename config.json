@@ -22,7 +22,7 @@
   "options": {
     "log_level": "INFO",
     "login": null,
-    "zones": "96",
+    "zones": "",
     "mqtt_discovery_max_zone": null,
     "mqtt_host": "",
 	"mqtt_port": 1883,
