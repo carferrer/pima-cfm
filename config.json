@@ -8,8 +8,8 @@ arch:
 startup: application
 boot: auto
 map:
-  - "config:ro"
-  - "ssl:ro"
+  - config:ro
+  - ssl:ro
 discovery:
   - mqtt
 services:
