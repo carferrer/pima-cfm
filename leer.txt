@@ -1,0 +1,13 @@
+1º.- No se porque pero no he podido hacer pasar como parámetro ssl key y cert para que el http lo cree encriptado. Además en el docker original no lo tiene.
+2º.- Probé creando una nueva imagen modificando el run.sh añadiendo la opcion ssl cert y ssl key así como el archivo config.json. Tampoco funciona.
+3º.- Conseguí utilizar mi imagen de doker sibiendo la imagen a docker.io. Hay que añadir a la imagen el tag para poder hacer un push request docker tag pima2mqtt carferrermar/pima2mqtt:latest. En config.json de pima hay que modificar la version para poder actualizar directamente y no desinstalando e instalando el addon.
+4º.- Al final si funcinó modificando una parte del fichero pima_server.py y leyendo directamente el archivo /data/opctions.json la entrada ssl_cert y ssl_key y añadiendo la entrada a la creación del http.
+
+Consulta por web:
+
+https://pima.servidorpropio.com:7777/pima?key=whjgwygwg2162672wuhdwduwqiduiwq&command=status
+
+
+https://github.com/deiger/Alarm -> base del proyecto
+https://github.com/elad-bar/Alarm -> mejora del proyecto pero no funciona este proyecto.
+
