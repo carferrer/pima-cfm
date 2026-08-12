@@ -20,37 +20,3 @@ environment:
   OPTIONS_FILE: "/data/options.json"
 ports:
   7777/tcp: 7777
-options:
-  log_level: "INFO"
-  login: null
-  zones: ""
-  mqtt_discovery_max_zone: null
-  mqtt_host: ""
-  mqtt_port: 1883
-  mqtt_topic: ""
-  mqtt_user: null
-  mqtt_pass: null
-  mqtt_client_id: ""
-  ssl_cert: ""
-  ssl_key: ""
-  serialport: ""
-  key: null
-  port: 7777
-schema:
-  log_level: "list(CRITICAL|ERROR|WARNING|INFO|DEBUG)?"
-  login: "match([0-9]{4,6})"
-  zones: "list(32|96|144)?"
-  mqtt_discovery_max_zone: "int(0,144)"
-  mqtt_host: "str?"
-  mqtt_port: "port?"
-  mqtt_topic: "str?"
-  mqtt_user: "str?"
-  mqtt_pass: "str?"
-  mqtt_client_id: "str?"
-  ssl_cert: "str?"
-  ssl_key: "str?"
-  serialport: "str?"
-  pima_host: "str?"
-  pima_port: "port?"
-  key: "str"
-  port: "port"
