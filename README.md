@@ -4,7 +4,7 @@
 
 ## About
 
-Use this add-on to add support for PIMA Alarms. See [here](https://github.com/carferrer/Alarm-PIMA) for more details.
+Use this add-on to add support for PIMA Alarms. See [here](https://github.com/carferrer/pima-cfm) for more details.
 
 
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
