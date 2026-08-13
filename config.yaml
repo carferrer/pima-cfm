@@ -1,5 +1,5 @@
 name: "PIMA Alarms"
-version: "2028.08.04"
+version: "2028.08.05"
 slug: "pima"
 description: "Interface para PIMA Hunter Pro alarms."
 url: "https://github.com/carferrer/pima-cfm"
