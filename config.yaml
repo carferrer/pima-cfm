@@ -1,8 +1,8 @@
 name: "PIMA Alarms"
-version: "2028.08.02"
+version: "2028.08.03"
 slug: "pima"
 description: "Interface for negotiation with PIMA Hunter Pro alarms."
-url: "https://github.com/deiger/Alarm"
+url: "https://github.com/carferrer/pima-cfm"
 arch:
   - aarch64
   - amd64
