@@ -1,45 +1,44 @@
-{
-  "name": "PIMA Alarms",
-  "version": "2028.08.02",
-  "slug": "pima",
-  "description": "Interface for negotiation with PIMA Hunter Pro alarms.",
-  "url": "https://github.com/deiger/Alarm",
-  #"image": "deiger/pima",
-  "arch": ["aarch64", "amd64"],
-  "startup": "application",
-  "boot": "auto",
-  "map": ["config:rw"],
-  "discovery": ["mqtt"],
-  "services": ["mqtt:want"],
-  "auto_uart": true,
-  "uart": true,
-  "environment": {
-    "OPTIONS_FILE": "/data/options.json"
-  },
-  "options": {
-    "log_level": "INFO",
-    "login": null,
-    "zones": "32",
-    "mqtt_discovery_max_zone": 8,
-    "mqtt_host": "core-mosquitto",
-    "key": null,
-    "port": null
-  },
-  "schema": {
-    "log_level": "list(CRITICAL|ERROR|WARNING|INFO|DEBUG)?",
-    "login": "match([0-9]{4,6})",
-    "zones": "list(32|96|144)?",
-    "mqtt_discovery_max_zone": "int(0,144)",
-    "mqtt_host": "str?",
-    "mqtt_port": "port?",
-    "mqtt_topic": "str?",
-    "mqtt_user": "str?",
-    "mqtt_pass": "str?",
-    "mqtt_client_id": "str?",
-    "serialport": "str?",
-    "pima_host": "str?",
-    "pima_port": "port?",
-    "key": "str",
-    "port": "port"
-  }
-}
+name: "PIMA Alarms"
+version: "2028.08.02"
+slug: "pima"
+description: "Interface for negotiation with PIMA Hunter Pro alarms."
+url: "https://github.com/deiger/Alarm"
+arch:
+  - aarch64
+  - amd64
+startup: "application"
+boot: "auto"
+map:
+  - "config:rw"
+discovery:
+  - "mqtt"
+services:
+  - "mqtt:want"
+auto_uart: true
+uart: true
+environment:
+  OPTIONS_FILE: "/data/options.json"
+options:
+  log_level: "INFO"
+  login: null
+  zones: "32"
+  mqtt_discovery_max_zone: 8
+  mqtt_host: "core-mosquitto"
+  key: null
+  port: null
+schema:
+  log_level: "list(CRITICAL|ERROR|WARNING|INFO|DEBUG)?"
+  login: "match([0-9]{4,6})"
+  zones: "list(32|96|144)?"
+  mqtt_discovery_max_zone: "int(0,144)"
+  mqtt_host: "str?"
+  mqtt_port: "port?"
+  mqtt_topic: "str?"
+  mqtt_user: "str?"
+  mqtt_pass: "str?"
+  mqtt_client_id: "str?"
+  serialport: "str?"
+  pima_host: "str?"
+  pima_port: "port?"
+  key: "str"
+  port: "port"
