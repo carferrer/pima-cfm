@@ -3,6 +3,8 @@ version: "2028.08.04"
 slug: "pima"
 description: "Interface para PIMA Hunter Pro alarms."
 url: "https://github.com/carferrer/pima-cfm"
+image: "ghcr.io/carferrer/pima-cfm"
+image_tag: "latest"
 arch:
   - aarch64
   - amd64
