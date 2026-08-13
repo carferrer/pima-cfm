@@ -1,5 +1,2 @@
 paho-mqtt
-requests
-pandas
-numpy
-flask
+crcmod
