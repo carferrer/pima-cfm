@@ -320,6 +320,7 @@ def mqtt_publish_discovery() -> None:
             False,
         'code_disarm_required':
             False,
+        'supported_features': ['arm_home', 'arm_away', 'arm_night'],
         'value_template':
             """{% if 0 in value_json['outputs'] or 1 in value_json['outputs'] %}triggered{%
                               elif value_json['partitions']['1'] == 'home1' %}armed_home{%
