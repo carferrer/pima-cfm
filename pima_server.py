@@ -518,10 +518,19 @@ if __name__ == '__main__':
 
   httpd = HTTPServer(('', _parsed_args.port), HTTPRequestHandler)
   if _parsed_args.ssl_cert:
-    httpd.socket = ssl.wrap_socket(httpd.socket,
-                                   certfile=_parsed_args.ssl_cert,
-                                   keyfile=_parsed_args.ssl_key,
-                                   server_side=True)
+    # 1. Crear el contexto SSL moderno y seguro
+    context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
+    # 2. Cargar los certificados (reemplaza con tus variables o rutas originales)
+    # Nota: Si tu script usa argumentos de consola, suele verse como: _parsed_args.certfile
+    context.load_cert_chain(certfile=_parsed_args.ssl_cert, keyfile=_parsed_args.ssl_key)
+    # 3. Envolver el socket usando el contexto
+    httpd.socket = context.wrap_socket(httpd.socket, server_side=True)
+
+    
+    #httpd.socket = ssl.wrap_socket(httpd.socket,
+    #                               certfile=_parsed_args.ssl_cert,
+    #                               keyfile=_parsed_args.ssl_key,
+    #                               server_side=True)
   try:
     httpd.serve_forever()
   except KeyboardInterrupt:
