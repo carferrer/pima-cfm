@@ -346,8 +346,7 @@ def mqtt_publish_discovery() -> None:
                                        'binary_sensor', f'alarmed_zone_{i}', 'pima_alarm',
                                        'config')
       _mqtt_client.publish(old_open_topic, payload='', retain=True)
-      _mqtt_client.publish(old_alarmed_topic, payload='', retain=True)
-      
+      _mqtt_client.publish(old_alarmed_topic, payload='', retain=True)     
       open_zones_config = {
           'name':
               f'Alarm Zone {i} Open',
@@ -364,8 +363,8 @@ def mqtt_publish_discovery() -> None:
           'payload_off':
               'off',
           'value_template':
-              f"{{f"{{% if {i} in value_json['open zones'] %}}on{{% else %}}off{{% endif %}}",
-          'device_class': 'motion'% if {i} in value_json['open zones'] %}}on{{% else %}}off{{% endif %}}"
+              f"{{% if {i} in value_json['open zones'] %}}on{{% else %}}off{{% endif %}}",
+          'device_class': 'motion'
       }
       alarmed_zones_config = {
           'name':
@@ -374,9 +373,6 @@ def mqtt_publish_discovery() -> None:
               f'pima_alarm_zone_{i}_alarming',
           'device':
             device_info,
-          'device': {
-              **device_info, 'via_device': 'pima_alarm'
-          },
           'state_topic':
               _mqtt_topics['pub'],
           'availability_topic':
@@ -388,6 +384,7 @@ def mqtt_publish_discovery() -> None:
           'value_template':
               f"{{% if {i} in value_json['alarmed zones'] %}}on{{% else %}}off{{% endif %}}"
       }
+                           
       _mqtt_client.publish(
           _mqtt_topics['discovery'].format(f'binary_sensor/pima_alarm_zone_{i}_open'),
           payload=to_json(open_zones_config),
@@ -396,6 +393,7 @@ def mqtt_publish_discovery() -> None:
           _mqtt_topics['discovery'].format(f'binary_sensor/pima_alarm_zone_{i}_alarming'),
           payload=to_json(alarmed_zones_config),
           retain=True)
+
 
 
 def mqtt_publish_lwt_online() -> None:
@@ -539,7 +537,7 @@ if __name__ == '__main__':
     # 3. Envolver el socket usando el contexto
     httpd.socket = context.wrap_socket(httpd.socket, server_side=True)
 
-    
+
     #httpd.socket = ssl.wrap_socket(httpd.socket,
     #                               certfile=_parsed_args.ssl_cert,
     #                               keyfile=_parsed_args.ssl_key,
