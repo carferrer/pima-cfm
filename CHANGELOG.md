@@ -1,3 +1,7 @@
+# Versión 2026.09.02 (2026-09-05)
+
+**Full Changelog**: https://github.com/carferrer/pima-cfm/compare/2026.09.01...2026.09.02
+
 # Versión 2026.09.01 (2026-09-05)
 
 **Full Changelog**: https://github.com/carferrer/pima-cfm/commits/2026.09.01
