@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "timezone": "Europe/Madrid",
+  "dependencyDashboard": true,
+  "automerge": false,
+  "enabledManagers": [
+    "dockerfile",
+    "github-actions",
+    "pip_requirements",
+    "pip_setup"
+  ]
+}
